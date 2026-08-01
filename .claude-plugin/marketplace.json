@@ -1,0 +1,17 @@
+{
+  "name": "dk-agenten",
+  "owner": {
+    "name": "Dennis Krüger"
+  },
+  "plugins": [
+    {
+      "name": "dk-agents",
+      "source": "./plugins/dk-agents",
+      "description": "Eigene Subagenten (u.a. control-consti: Security-/DSGVO-Audit)",
+      "version": "1.0.0",
+      "author": {
+        "name": "Dennis Krüger"
+      }
+    }
+  ]
+}

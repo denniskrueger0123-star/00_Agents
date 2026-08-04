@@ -7,8 +7,8 @@
     {
       "name": "dk-agents",
       "source": "./plugins/dk-agents",
-      "description": "Eigene Subagenten (u.a. control-consti: Security-/DSGVO-Audit)",
-      "version": "1.0.0",
+      "description": "Eigene Subagenten (control-consti: Security-/DSGVO-Audit; execution-axel: Plaene 1:1 ausfuehren)",
+      "version": "1.1.0",
       "author": {
         "name": "Dennis Krüger"
       }

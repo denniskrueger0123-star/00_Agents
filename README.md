@@ -12,8 +12,23 @@ plugins/dk-agents/
   .claude-plugin/plugin.json         Plugin-Manifest
   agents/
     control-consti.md                Security-/DSGVO-Auditor
+    execution-axel.md                Fuehrt fertige Plaene 1:1 aus
     (weitere Agenten kommen hierher)
 ```
+
+## Agenten im Überblick
+
+- **control-consti** — Security-/DSGVO-Auditor. Read-only, prüft vor einem
+  Deployment oder bei sicherheitsrelevantem Code, ändert selbst nichts.
+- **execution-axel** — reiner Ausführungs-Agent. Bekommt einen bereits
+  fertigen, detaillierten Plan und setzt ihn Schritt für Schritt exakt um,
+  ohne eigene Produktentscheidungen zu treffen. Unklares im Plan wird als
+  offene Frage in der Abschluss-Zusammenfassung notiert, nicht erraten.
+  Versioniert, committet und pusht dabei nach fester Routine (siehe Datei):
+  bestehende Projekte behalten ihr bisheriges Versionsschema, neue Projekte
+  starten mit dem 3-teiligen Schema `v0.1.0` (MAJOR=Release, MINOR=Feature,
+  PATCH=Bugfix). Legt nach jedem Push zusätzlich einen Zweig an, der exakt
+  die neue Versionsnummer trägt, damit GitHub das ZIP entsprechend benennt.
 
 ## Neuen Agenten hinzufügen
 

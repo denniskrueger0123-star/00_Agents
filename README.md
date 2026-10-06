@@ -13,6 +13,7 @@ plugins/dk-agents/
   agents/
     control-consti.md                Security-/DSGVO-Auditor
     execution-axel.md                Fuehrt fertige Plaene 1:1 aus
+  .mcp.json                          MCP-Server (ElevenLabs), kommt mit dem Plugin
     (weitere Agenten kommen hierher)
 ```
 
@@ -65,6 +66,29 @@ Kein erneutes Kopieren in einzelne Projekt-Repos mehr nötig.
   "enabledPlugins": ["dk-agents@dk-agenten"]
 }
 ```
+
+## MCP-Server: ElevenLabs
+
+Das Plugin bringt den offiziellen ElevenLabs-MCP-Server (`elevenlabs-mcp`,
+Start per `uvx`) in `plugins/dk-agents/.mcp.json` mit. Er ist damit überall
+verfügbar, wo das Plugin aktiv ist — lokal, in Cloud-Sessions und in jedem
+Projekt, das die Marketplace einbindet. Claude kann dann z. B. Text zu Sprache
+machen, Stimmen klonen/auflisten, Audio transkribieren und Conversational-AI-
+Agenten verwalten.
+
+**API-Key (nie ins Repo committen!):** Der Key wird nur per Umgebungsvariable
+`ELEVENLABS_API_KEY` gelesen.
+
+- **Cloud-Sessions:** In der Umgebung (Cloud-Umgebungsmenü in der Titelleiste →
+  Edit) als Environment-Variable `ELEVENLABS_API_KEY` hinterlegen. Neue Sessions
+  übernehmen sie automatisch. Zusätzlich muss `uv` (für `uvx`) in der Umgebung
+  verfügbar sein und `api.elevenlabs.io` im Netzwerk erlaubt sein.
+- **Lokal:** `export ELEVENLABS_API_KEY=...` in der Shell-Konfiguration, danach
+  `/plugin marketplace update dk-agenten` und Claude Code neu starten.
+- Optional `ELEVENLABS_MCP_BASE_PATH` setzen, wohin erzeugte Audiodateien
+  geschrieben werden (Standard: `/tmp/elevenlabs`).
+
+Prüfen mit `/mcp` — der Server `elevenlabs` sollte als verbunden erscheinen.
 
 ## Hinweis
 

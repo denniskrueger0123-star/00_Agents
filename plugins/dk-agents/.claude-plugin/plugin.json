@@ -1,7 +1,7 @@
 {
   "name": "dk-agents",
   "description": "Eigene Subagenten fuer alle Projekte (control-consti: Security-/DSGVO-Audit; execution-axel: Plaene 1:1 ausfuehren)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Dennis Krüger"
   }
